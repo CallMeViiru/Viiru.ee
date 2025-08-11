@@ -208,6 +208,26 @@
 
 </script>
 
+<script>
+  fetch('products.json')
+    .then(response => response.json())
+    .then(products => {
+      const container = document.getElementById('product-list');
+      products.forEach(product => {
+        const productHTML = `
+          <div class="product-box">
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <h3>${product.price}</h3>
+            <p>${product.description}</p>
+            <button onclick="window.location.href='https://www.yaga.ee/viiru'">Osta kohe</button>
+          </div>
+        `;
+        container.innerHTML += productHTML;
+      });
+    })
+    .catch(error => console.error('Error loading products:', error));
+</script>
 
 
 </body>
