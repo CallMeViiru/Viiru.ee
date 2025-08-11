@@ -127,91 +127,10 @@
 
   <h2>Soovitan neid tooteid</h2>
 
-  <div class="recommended-grid">
-
-
-    <div class="product-box">
-
-      <img src="https://images.yaga.ee/krnai6oo478/7a2651.jpeg?s=1200&c=inside&f=webp" alt="Recommended Product Picture">
-
-      <h3>Fifa 6</h3>
-
-      <h3>6€</h3>
-
-      <p>Uueväärne PlayStation 2 Mäng</p>
-      
-    </div>
-
-
-    <div class="product-box">
-
-      <img src="https://images.yaga.ee/e8vu5e2d1o8/b7ed0a.jpeg?s=1200&c=inside&f=webp" alt="Recommended Product Picture">
-
-      <h3>Kõrvaklapid</h3>
-
-      <h3>4€</h3>
-
-      <p>Uueväärsed kõrvaklapid</p>
-
-    </div>
-
-
-
-    <div class="product-box">
-
-      <img src="https://images.yaga.ee/i3p5l7r7eig/ee9ce6.jpeg?s=1200&c=inside&f=webp" alt="Recommended Product Picture">
-
-      <h3>Kõrvaklapid</h3>
-
-      <h3>3.5€</h3>
-
-      <p>Keskmises / Heas korras kõrvaklapid mikrofoniga</p>
-
-    </div>
-
-
-
-    <!-- ✅ IN-FEED AD BETWEEN PRODUCTS -->
-
-    <div class="in-feed-ad">
-
-      <ins class="adsbygoogle"
-
-           style="display:block"
-
-           data-ad-format="fluid"
-
-           data-ad-layout-key="-bc-1e-2v+4h+dp"
-
-           data-ad-client="ca-pub-9235877052315560"
-
-           data-ad-slot="3877745184"></ins>
-
-      <script>
-
-           (adsbygoogle = window.adsbygoogle || []).push({});
-
-      </script>
-
-    </div>
-
-
-
-    <div class="product-box">
-
-      <img src="https://images.yaga.ee/lu4m8mjqhmo/2b9802.jpeg?s=1200&c=inside&f=webp" alt="Recommended Product Picture">
-
-      <h3>Raamat</h3>
-
-      <h3>5€</h3>
-
-      <p>Uueväärne raamat - "Operatsioon shylock"</p>
-
-    </div>
-
-
-
-  </div>
+  
+  <div class="recommended-grid" id="product-list">
+  <!-- Products will load here from JSON -->
+</div>
 
 
 
@@ -283,7 +202,26 @@
 
 </script>
 
-
+<script>
+  fetch('products.json')
+    .then(response => response.json())
+    .then(products => {
+      const container = document.getElementById('product-list');
+      products.forEach(product => {
+        const productHTML = `
+          <div class="product-box">
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <h3>${product.price}</h3>
+            <p>${product.description}</p>
+            <button onclick="window.location.href='https://www.yaga.ee/viiru'">Osta kohe</button>
+          </div>
+        `;
+        container.innerHTML += productHTML;
+      });
+    })
+    .catch(error => console.error('Error loading products:', error));
+</script>
 
 </body>
 
