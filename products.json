@@ -1,26 +1,8 @@
 [
   {
-    "name": "Fifa 6",
-    "price": "5.5€",
-    "description": "Uueväärne PlayStation 2 Mäng",
-    "image": "https://images.yaga.ee/krnai6oo478/7a2651.jpeg?s=1200&c=inside&f=webp"
+    "name": "NONE",
+    "price": "999€",
+    "description": "REMOVED",
+    "image": "NOIMAGE"
   },
-  {
-    "name": "Kõrvaklapid",
-    "price": "3.5€",
-    "description": "Heas korras kõrvaklapid",
-    "image": "https://images.yaga.ee/e8vu5e2d1o8/b7ed0a.jpeg?s=1200&c=inside&f=webp"
-  },
-  {
-    "name": "Kõrvaklapid",
-    "price": "3.5€",
-    "description": "Keskmises / Heas korras kõrvaklapid mikrofoniga",
-    "image": "https://images.yaga.ee/i3p5l7r7eig/ee9ce6.jpeg?s=1200&c=inside&f=webp"
-  },
-  {
-    "name": "Raamat",
-    "price": "4.25€",
-    "description": "Uueväärne raamat - 'Operatsioon shylock'",
-    "image": "https://images.yaga.ee/lu4m8mjqhmo/2b9802.jpeg?s=1200&c=inside&f=webp"
-  }
 ]
